@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành Menu Ngang</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            margin-bottom: 25px;
+        }
+
+        #menu {
+            height: 45px;
+            background-color: #222;
+            border: 1px solid #444;
+        }
+
+        #menu ul {
+            list-style: none;
+        }
+
+        #menu > ul {
+            display: flex;
+        }
+
+        #menu li {
+            position: relative;
+        }
+
+        #menu a {
+            display: block;
+            width: 150px;
+            height: 43px;
+            line-height: 43px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+        }
+
+        #menu a:hover {
+            background-color: red;
+        }
+
+        #menu ul ul {
+            position: absolute;
+            top: 43px;
+            left: 0;
+            background-color: #222;
+            visibility: hidden;
+            z-index: 10;
+        }
+
+        #menu li:hover > ul {
+            visibility: visible;
+        }
+
+        #menu ul ul ul {
+            top: 0;
+            left: 150px;
+        }
+
+        .content {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            min-height: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Menu Dropdown Ngang</h1>
+
+    <div id="menu">
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+
+            <li>
+                <a href="#">Sản phẩm ▼</a>
+                <ul>
+                    <li><a href="#">Máy tính</a></li>
+                    <li><a href="#">Điện thoại</a></li>
+                    <li>
+                        <a href="#">Phụ kiện ▸</a>
+                        <ul>
+                            <li><a href="#">Tai nghe</a></li>
+                            <li><a href="#">Bàn phím</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">Dịch vụ ▼</a>
+                <ul>
+                    <li><a href="#">Tư vấn</a></li>
+                    <li><a href="#">Bảo hành</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#">Tin tức</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h2>Chào mừng bạn!</h2>
+        <p>Di chuột vào mục Sản phẩm hoặc Dịch vụ để xem menu con.</p>
+    </div>
+</body>
+</html>
